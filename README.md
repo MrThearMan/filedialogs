@@ -1,5 +1,9 @@
 # File dialogs for windows
 
+```
+pip install windows_filedialogs
+```
+
 Implements easy windows file dialog functions. Requires the [pywin32](https://pypi.org/project/pywin32/) module.
 
 ```
