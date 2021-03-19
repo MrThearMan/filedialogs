@@ -19,5 +19,4 @@ openfolder = open_folder_dialog()
 if openfolder:
     with open(os.path.join(openfolder, ...), "w") as f:
         ...
-
 ```
