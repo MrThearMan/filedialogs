@@ -93,7 +93,7 @@ def save_file_dialog(title=None, directory=os.getcwd(), default_name="", default
             raise IOError
 
 
-def open_folder_fialog(title="", encoding="ISO8859-1"):
+def open_folder_dialog(title="", encoding="ISO8859-1"):
     """Open a folder open dialog.
 
     :param title: Dialog title.
