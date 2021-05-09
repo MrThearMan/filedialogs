@@ -6,7 +6,7 @@ pip install windows_filedialogs
 
 Implements easy windows file dialog functions. Requires the [pywin32](https://pypi.org/project/pywin32/) module.
 
-```
+```python
 from filedialogs import save_file_dialog, open_file_dialog, open_folder_dialog
 
 openpath = open_file_dialog()
