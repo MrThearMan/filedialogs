@@ -140,12 +140,3 @@ def open_folder_dialog(title: str = "", encoding: str = "ISO8859-1") -> Optional
 
     if (pidl, display_name, image_list) != (None, None, None):
         return shell.SHGetPathFromIDList(pidl).decode(encoding)
-
-
-
-if __name__ == "__main__":
-
-    path = open_folder_dialog()
-
-    print(path)
-
