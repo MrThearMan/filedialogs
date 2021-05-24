@@ -56,7 +56,7 @@ Raises: IOError - File save dialog failed.
 
 ---
 
-#### *save_file_dialog*
+#### *open_folder_dialog*
 * title: str - Dialog title. Default is no title.
 * encoding: str - Encoding for the folder. Default is Latin-1.
 
