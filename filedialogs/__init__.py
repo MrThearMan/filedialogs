@@ -1,1 +1,1 @@
-from . filedialogs import  *
+from .filedialogs import *

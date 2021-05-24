@@ -2,6 +2,6 @@
 requires = [
     "setuptools>=42",
     "wheel",
-    "pywin32"
+    "pywin32==300"
 ]
 build-backend = "setuptools.build_meta"
