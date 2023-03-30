@@ -1,7 +1,138 @@
-[build-system]
-requires = [
-    "setuptools>=42",
-    "wheel",
-    "pywin32==300"
+[tool.poetry]
+name = "windows_filedialogs"
+version = "0.0.5"
+description = "Simple Windows file dialogs."
+authors = [
+    "Matti Lamppu <lamppu.matti.akseli@gmail.com>",
 ]
-build-backend = "setuptools.build_meta"
+packages = [
+    { include = "filedialogs" },
+]
+license = "MIT"
+readme = "README.md"
+homepage = "https://mrthearman.github.io/filedialogs"
+repository = "https://github.com/MrThearMan/filedialogs"
+keywords = [
+    "file",
+    "dialogs",
+    "windows",
+    "open",
+    "save",
+]
+classifiers = [
+    "Natural Language :: English",
+    "Intended Audience :: Developers",
+    "Operating System :: Microsoft :: Windows",
+    "Operating System :: Microsoft :: Windows :: Windows 10",
+    "Operating System :: Microsoft :: Windows :: Windows 11",
+    "Programming Language :: Python",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3 :: Only",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+]
+include = [
+    "README.md",
+    "LICENSE",
+]
+exclude = [
+    "tests",
+]
+
+[tool.poetry.urls]
+"Bug Tracker" = "https://github.com/MrThearMan/filedialogs/issues"
+
+[tool.poetry.dependencies]
+python = ">=3.8,<4"
+pywin32 = ">=306"
+
+[tool.poetry.group.test.dependencies]
+pytest = "7.2.2"
+coverage = "6.5.0"
+pre-commit = "3.2.1"
+tox = "4.4.8"
+tox-gh-actions = "3.1.0"
+coveralls = "3.3.1"
+
+[tool.poetry.group.docs.dependencies]
+mkdocs = "1.4.2"
+pymdown-extensions = "9.10"
+mkdocs-mermaid2-plugin = "0.6.0"
+
+[tool.poetry.group.lint.dependencies]
+mypy = "1.1.1"
+
+[tool.black]
+line-length = 120
+
+[tool.ruff]
+fix = true
+line-length = 120
+extend-exclude = [
+    "tests/*",
+]
+select = [
+    "F",  # pyflakes
+    "E",  # pycodestyle errors
+    "I",  # isort
+    "S",  # flake8-bandit
+    "C",  # flake8-comprehensions
+    "B",  # flake8-bugbear
+    "T",  # flake8-print
+    "W",  # pycodestyle warnings
+]
+ignore = [
+]
+
+[tool.mypy]
+python_version = "3.11"
+warn_return_any = "True"
+warn_unused_configs = "True"
+
+[tool.coverage.run]
+relative_files = true
+
+[tool.coverage.report]
+omit = [
+    "tests/*",
+    "docs/*",
+    ".venv/*",
+    ".tox/*",
+]
+exclude_lines = [
+    "if TYPE_CHECKING:",
+    "except ImportError:",
+    "pragma: no cover",
+]
+
+[tool.pytest.ini_options]
+addopts = "-vv -s --log-cli-level=INFO"
+
+[tool.tox]
+legacy_tox_ini = """
+[tox]
+envlist = py{38, 39, 310, 311}
+isolated_build = true
+
+[gh-actions]
+python =
+    3.8: py38
+    3.9: py39
+    3.10: py310
+    3.11: py311
+
+[testenv]
+allowlist_externals =
+    poetry
+setenv =
+    PYTHONPATH = {toxinidir}
+commands =
+    poetry install
+    poetry run coverage run -m pytest
+"""
+
+[build-system]
+requires = ["poetry-core>=1.4.0"]
+build-backend = "poetry.core.masonry.api"
