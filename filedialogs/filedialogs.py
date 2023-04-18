@@ -56,7 +56,7 @@ def open_file_dialog(
             if isinstance(extensions, str):
                 ext_filter += f"{name}\0*.{extensions}\0"
                 continue
-            ext_filter += f"{name}\0" + ";".join(f"*.{extension}" for extension in extensions) + '\0'
+            ext_filter += f"{name}\0" + ";".join(f"*.{extension}" for extension in extensions) + "\0"
         ext = ext_filter
 
     try:
@@ -121,7 +121,7 @@ def save_file_dialog(
             if isinstance(extensions, str):
                 ext_filter += f"{name}\0*.{extensions}\0"
                 continue
-            ext_filter += f"{name}\0" + ";".join(f"*.{extension}" for extension in extensions) + '\0'
+            ext_filter += f"{name}\0" + ";".join(f"*.{extension}" for extension in extensions) + "\0"
         ext = ext_filter
 
     try:
