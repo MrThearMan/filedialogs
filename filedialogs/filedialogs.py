@@ -52,7 +52,7 @@ def open_file_dialog(
     else:
         extFilter = ""
         for name, extensions in ext:
-            extFilter += f"{name}\0" + ";".join(f"*.{extension}" for extension in extensions) + '\0'
+            extFilter += f"{name}\0" + ";".join(f"*.{extension}" for extension in extensions) + "\0"
 
     try:
         file_path, _, _ = GetOpenFileNameW(
@@ -112,7 +112,7 @@ def save_file_dialog(
     else:
         extFilter = ""
         for name, extensions in ext:
-            extFilter += f"{name}\0" + ";".join(f"*.{extension}" for extension in extensions) + '\0'
+            extFilter += f"{name}\0" + ";".join(f"*.{extension}" for extension in extensions) + "\0"
 
     try:
         file_path, _, _ = GetSaveFileNameW(
