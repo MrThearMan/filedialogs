@@ -50,7 +50,9 @@ def open_file_dialog(
     if ext is None:
         ext = "All Files\0*.*\0"
     else:
-        ext = "".join([f"{name}\0*.{extension}\0" for name, extension in ext])
+        extFilter = ""
+        for name, extensions in ext:
+            extFilter += f"{name}\0" + ";".join(f"*.{extension}" for extension in extensions) + '\0'
 
     try:
         file_path, _, _ = GetOpenFileNameW(
@@ -59,7 +61,7 @@ def open_file_dialog(
             Flags=flags,
             Title=title,
             MaxFile=2**16,
-            Filter=ext,
+            Filter=extFilter,
             DefExt=default_ext,
         )
 
@@ -108,7 +110,9 @@ def save_file_dialog(
     if ext is None:
         ext = "All Files\0*.*\0"
     else:
-        ext = "".join([f"{name}\0*.{extension}\0" for name, extension in ext])
+        extFilter = ""
+        for name, extensions in ext:
+            extFilter += f"{name}\0" + ";".join(f"*.{extension}" for extension in extensions) + '\0'
 
     try:
         file_path, _, _ = GetSaveFileNameW(
@@ -116,7 +120,7 @@ def save_file_dialog(
             File=default_name,
             Title=title,
             MaxFile=2**16,
-            Filter=ext,
+            Filter=extFilter,
             DefExt=default_ext,
         )
 
