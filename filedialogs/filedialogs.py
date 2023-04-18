@@ -20,7 +20,7 @@ def open_file_dialog(
     directory: Optional[str] = None,
     default_name: str = "",
     default_ext: str = "",
-    ext: List[Tuple[str, str]] = None,
+    ext: List[Tuple[str, Tuple[str, ...]]] | List[Tuple[str, str]] = None,
     multiselect: bool = False,
 ) -> Union[str, List[str], None]:
     """Open a file open dialog at a specified directory.
@@ -29,8 +29,9 @@ def open_file_dialog(
     :param directory: Directory to open file dialog in.
     :param default_name: Default file name.
     :param default_ext: Default file extension. Only letters, no dot.
-    :param ext: List of available extension description + name tuples,
-                e.g. [(JPEG Image, jpg), (PNG Image, png)].
+    :param ext: List of available extension(s) description + name tuples,
+                e.g. [("JPEG Image", "jpg"), ("PNG Image", "png")].
+                or, [("MPEG-4 Variations", ("m4v", "mp4", "m4p")), ("AVI Variations", ("avi", "amv"))]
     :param multiselect: Allow multiple files to be selected.
     :return: Path to a file to open if multiselect=False.
              List of the paths to files, which should be opened if multiselect=True.
@@ -50,9 +51,13 @@ def open_file_dialog(
     if ext is None:
         ext = "All Files\0*.*\0"
     else:
-        extFilter = ""
+        ext_filter = ""
         for name, extensions in ext:
-            extFilter += f"{name}\0" + ";".join(f"*.{extension}" for extension in extensions) + '\0'
+            if isinstance(extensions, str):
+                ext_filter += f"{name}\0*.{extensions}\0"
+                continue
+            ext_filter += f"{name}\0" + ";".join(f"*.{extension}" for extension in extensions) + '\0'
+        ext = ext_filter
 
     try:
         file_path, _, _ = GetOpenFileNameW(
@@ -61,7 +66,7 @@ def open_file_dialog(
             Flags=flags,
             Title=title,
             MaxFile=2**16,
-            Filter=extFilter,
+            Filter=ext,
             DefExt=default_ext,
         )
 
@@ -88,7 +93,7 @@ def save_file_dialog(
     directory: Optional[str] = None,
     default_name: str = "",
     default_ext: str = "",
-    ext: List[Tuple[str, str]] = None,
+    ext: List[Tuple[str, Tuple[str, ...]]] | List[Tuple[str, str]] = None,
 ) -> Optional[str]:
     """Open a file save dialog at a specified directory.
 
@@ -96,8 +101,9 @@ def save_file_dialog(
     :param directory: Directory to open file dialog in.
     :param default_name: Default file name.
     :param default_ext: Default file extension. Only letters, no dot.
-    :param ext: List of available extension description + name tuples,
-                e.g. [(JPEG Image, jpg), (PNG Image, png)].
+    :param ext: List of available extension(s) description + name tuples,
+                e.g. [("JPEG Image", "jpg"), ("PNG Image", "png")].
+                or, [("MPEG-4 Variations", ("m4v", "mp4", "m4p")), ("AVI Variations", ("avi", "amv"))]
     :return: Path file should be saved to. None if file save dialog canceled.
     :raises IOError: File save dialog failed.
     """
@@ -110,9 +116,13 @@ def save_file_dialog(
     if ext is None:
         ext = "All Files\0*.*\0"
     else:
-        extFilter = ""
+        ext_filter = ""
         for name, extensions in ext:
-            extFilter += f"{name}\0" + ";".join(f"*.{extension}" for extension in extensions) + '\0'
+            if isinstance(extensions, str):
+                ext_filter += f"{name}\0*.{extensions}\0"
+                continue
+            ext_filter += f"{name}\0" + ";".join(f"*.{extension}" for extension in extensions) + '\0'
+        ext = ext_filter
 
     try:
         file_path, _, _ = GetSaveFileNameW(
@@ -120,7 +130,7 @@ def save_file_dialog(
             File=default_name,
             Title=title,
             MaxFile=2**16,
-            Filter=extFilter,
+            Filter=ext,
             DefExt=default_ext,
         )
 
