@@ -51,7 +51,7 @@ if openfolder:
 * directory: str - Directory to open file dialog in. Default is the current working directory.
 * default_name: str - Default file name on dialog open. Default is empty.
 * default_ext: str - Default file extension on dialog open. Default is no extension.
-* ext: list[tuple[str, str]] or list[tuple[str, tuple[str, ...]]] - List of available extensions as (description, extension) or (description, (extensions,)) tuples. Default is ("All files", "*").
+* ext: list[tuple[str, str | tuple[str, ...]]] - List of available extensions as (description, extension) or (description, (extensions,)) tuples. Default is ("All files", "*").
 * multiselect: bool - Allow multiple files to be selected. Default is False.
 
 Returns: Path to a file to open if multiselect=False. List of the paths to files which should be opened if multiselect=True. None if file open dialog canceled.
@@ -65,7 +65,7 @@ Raises: IOError - File open dialog failed.
 * directory: str - Directory to open file dialog in. Default is the current working directory.
 * default_name: str - Default file name on dialog open. Default is empty.
 * default_ext: str - Default file extension on dialog open. Default is no extension.
-* ext: list[tuple[str, str]] or list[tuple[str, tuple[str, ...]]] - List of available extensions as (description, extension) or (description, (extensions,)) tuples. Default is ("All files", "*").
+* ext: list[tuple[str, str | tuple[str, ...]]] - List of available extensions as (description, extension) or (description, (extensions,)) tuples. Default is ("All files", "*").
 
 Returns: Path file should be save to. None if file save dialog canceled.
 
