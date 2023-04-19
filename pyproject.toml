@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "windows_filedialogs"
-version = "0.0.5"
+version = "0.0.6"
 description = "Simple Windows file dialogs."
 authors = [
     "Matti Lamppu <lamppu.matti.akseli@gmail.com>",
