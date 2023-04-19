@@ -81,8 +81,8 @@ Returns: Path to folder. None if no folder selected.
 
 ---
 
-[coverage-badge]: https://coveralls.io/repos/github/MrThearMan/filedialogs/badge.svg?branch=master
-[status-badge]: https://img.shields.io/github/actions/workflow/status/MrThearMan/filedialogs/test.yml?branch=master
+[coverage-badge]: https://coveralls.io/repos/github/MrThearMan/filedialogs/badge.svg?branch=main
+[status-badge]: https://img.shields.io/github/actions/workflow/status/MrThearMan/filedialogs/test.yml?branch=main
 [pypi-badge]: https://img.shields.io/pypi/v/windows-filedialogs
 [licence-badge]: https://img.shields.io/github/license/MrThearMan/filedialogs
 [repo-badge]: https://img.shields.io/github/last-commit/MrThearMan/filedialogs
@@ -90,9 +90,9 @@ Returns: Path to folder. None if no folder selected.
 [version-badge]: https://img.shields.io/pypi/pyversions/windows-filedialogs
 [downloads-badge]: https://img.shields.io/pypi/dm/windows-filedialogs
 
-[coverage]: https://coveralls.io/github/MrThearMan/filedialogs?branch=master
+[coverage]: https://coveralls.io/github/MrThearMan/filedialogs?branch=main
 [status]: https://github.com/MrThearMan/filedialogs/actions/workflows/test.yml
 [pypi]: https://pypi.org/project/windows-filedialogs
-[licence]: https://github.com/MrThearMan/filedialogs/blob/master/LICENSE
-[repo]: https://github.com/MrThearMan/filedialogs/commits/master
+[licence]: https://github.com/MrThearMan/filedialogs/blob/main/LICENSE
+[repo]: https://github.com/MrThearMan/filedialogs/commits/main
 [issues]: https://github.com/MrThearMan/filedialogs/issues

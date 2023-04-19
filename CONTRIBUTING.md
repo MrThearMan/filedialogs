@@ -115,26 +115,12 @@ when installed with `make hook`
 
 ## Guidelines for writing code
 
-- All code should be tested with 100% coverage
-  - Do not write test simply to archive 100% coverage. Instead, write tests for all the ways the
-    feature could be used (use cases), including ways that should not work, and then test for coverage.
-    If you find uncovered code, see if you can remove it, or maybe you simply missed a use case.
-    You should always need more tests to cover the all use cases than to achieve 100% coverage.
-  - Comments that ignore test coverage (`# pragma: no cover`) should be used _**very**_ sparingly.
-    They are often not necessary and can lead to undocumented behavior if you are not careful.
-
 - All code should be typed when possible.
   - Tests are an exception to this; typing them is optional.
   - Make sure the typing methods used are supported in all python versions
     the library supports (e.g., use `List[int]` instead of `list[int]` for Python 3.8 support).
     CI will yell at you if you don't.
-  - Create all custom types in `filedialogs/typing.py` and import them from there.
-    This avoids circular imports.
   - Use of `TypedDict` is encouraged where dicts would be used.
-  - Also import common types like `List` from `filedialogs/typing.py` instead of the built-in `typing` module.
-    This is to make importing types more consistent across the codebase, and allows conditional import
-    logic with the `typing_extensions` module for newer typing methods like `ParamSpec` to be contained
-    in a single place.
   - Using `mypy` for static type checking is optional, and will likely lead to many "errors" detected.
 
 - All functions, methods, and classes should include a docstring (*) in [reStructuredText format][pep287].

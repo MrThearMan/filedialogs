@@ -51,7 +51,7 @@ if openfolder:
 * directory: str - Directory to open file dialog in. Default is the current working directory.
 * default_name: str - Default file name on dialog open. Default is empty.
 * default_ext: str - Default file extension on dialog open. Default is no extension.
-* ext: list[tuple[str, str]] - List of available extensions as (description, extension) tuples. Default is ("All files", "*").
+* ext: list[tuple[str, str | tuple[str, ...]]] - List of available extensions as (description, extension) tuples. Default is ("All files", "*").
 * multiselect: bool - Allow multiple files to be selected. Default is False.
 
 Returns: Path to a file to open if multiselect=False. List of the paths to files which should be opened if multiselect=True. None if file open dialog canceled.
@@ -65,7 +65,7 @@ Raises: IOError - File open dialog failed.
 * directory: str - Directory to open file dialog in. Default is the current working directory.
 * default_name: str - Default file name on dialog open. Default is empty.
 * default_ext: str - Default file extension on dialog open. Default is no extension.
-* ext: list[tuple[str, str]] - List of available extensions as (description, extension) tuples. Default is ("All files", "*").
+* ext: list[tuple[str, str | tuple[str, ...]]]  - List of available extensions as (description, extension) tuples. Default is ("All files", "*").
 
 Returns: Path file should be save to. None if file save dialog canceled.
 
@@ -81,8 +81,8 @@ Returns: Path to folder. None if no folder selected.
 
 ---
 
-[coverage-badge]: https://coveralls.io/repos/github/MrThearMan/filedialogs/badge.svg?branch=master
-[status-badge]: https://img.shields.io/github/actions/workflow/status/MrThearMan/filedialogs/test.yml?branch=master
+[coverage-badge]: https://coveralls.io/repos/github/MrThearMan/filedialogs/badge.svg?branch=main
+[status-badge]: https://img.shields.io/github/actions/workflow/status/MrThearMan/filedialogs/test.yml?branch=main
 [pypi-badge]: https://img.shields.io/pypi/v/windows-filedialogs
 [licence-badge]: https://img.shields.io/github/license/MrThearMan/filedialogs
 [repo-badge]: https://img.shields.io/github/last-commit/MrThearMan/filedialogs
@@ -90,9 +90,9 @@ Returns: Path to folder. None if no folder selected.
 [version-badge]: https://img.shields.io/pypi/pyversions/windows-filedialogs
 [downloads-badge]: https://img.shields.io/pypi/dm/windows-filedialogs
 
-[coverage]: https://coveralls.io/github/MrThearMan/filedialogs?branch=master
+[coverage]: https://coveralls.io/github/MrThearMan/filedialogs?branch=main
 [status]: https://github.com/MrThearMan/filedialogs/actions/workflows/test.yml
 [pypi]: https://pypi.org/project/windows-filedialogs
-[licence]: https://github.com/MrThearMan/filedialogs/blob/master/LICENSE
-[repo]: https://github.com/MrThearMan/filedialogs/commits/master
+[licence]: https://github.com/MrThearMan/filedialogs/blob/main/LICENSE
+[repo]: https://github.com/MrThearMan/filedialogs/commits/main
 [issues]: https://github.com/MrThearMan/filedialogs/issues
