@@ -20,4 +20,5 @@ jobs:
     with:
       os: '["windows-latest"]'
       submit-os: "windows-latest"
+      poetry-version: "1.4.2"
       python-version: '["3.8", "3.9", "3.10", "3.11"]'

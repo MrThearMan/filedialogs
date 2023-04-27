@@ -136,7 +136,7 @@ def save_file_dialog(
 
         return file_path
 
-    except pywintypes.error as error:
+    except pywintypes.error as error:  # noqa
         if error.winerror == 0:
             return
         else:
