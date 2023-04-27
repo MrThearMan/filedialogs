@@ -115,6 +115,14 @@ when installed with `make hook`
 
 ## Guidelines for writing code
 
+- All code should be tested with 100% coverage
+  - Do not write test simply to archive 100% coverage. Instead, write tests for all the ways the
+    feature could be used (use cases), including ways that should not work, and then test for coverage.
+    If you find uncovered code, see if you can remove it, or maybe you simply missed a use case.
+    You should always need more tests to cover the all use cases than to achieve 100% coverage.
+  - Comments that ignore test coverage (`# pragma: no cover`) should be used _**very**_ sparingly.
+    They are often not necessary and can lead to undocumented behavior if you are not careful.
+
 - All code should be typed when possible.
   - Tests are an exception to this; typing them is optional.
   - Make sure the typing methods used are supported in all python versions
