@@ -20,7 +20,7 @@ def open_file_dialog(
     directory: Optional[str] = None,
     default_name: str = "",
     default_ext: str = "",
-    ext: List[Tuple[str, str | Tuple[str, ...]]] = None,
+    ext: List[Tuple[str, Union[str, Tuple[str, ...]]]] = None,
     multiselect: bool = False,
 ) -> Union[str, List[str], None]:
     """Open a file open dialog at a specified directory.
@@ -93,7 +93,7 @@ def save_file_dialog(
     directory: Optional[str] = None,
     default_name: str = "",
     default_ext: str = "",
-    ext: List[Tuple[str, str | Tuple[str, ...]]] = None,
+    ext: List[Tuple[str, Union[str, Tuple[str, ...]]]] = None,
 ) -> Optional[str]:
     """Open a file save dialog at a specified directory.
 
