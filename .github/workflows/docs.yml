@@ -12,7 +12,6 @@ on:
 
 jobs:
   docs:
-    uses: MrThearMan/CI/.github/workflows/docs.yml@v0.3.1
+    uses: MrThearMan/CI/.github/workflows/docs.yml@v0.3.4
     with:
       os: "windows-latest"
-      poetry-version: "1.5.1"

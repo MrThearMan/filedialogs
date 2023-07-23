@@ -19,6 +19,8 @@ pip install windows-filedialogs
 
 **Source Code**: [https://github.com/MrThearMan/filedialogs/](https://github.com/MrThearMan/filedialogs/)
 
+**Contributing**: [https://github.com/MrThearMan/filedialogs/blob/main/CONTRIBUTING.md](https://github.com/MrThearMan/filedialogs/blob/main/CONTRIBUTING.md)
+
 ---
 
 Implements easy Windows file dialog functions. Requires the [pywin32](https://pypi.org/project/pywin32/) module.
