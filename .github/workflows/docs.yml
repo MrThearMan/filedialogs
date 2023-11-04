@@ -12,6 +12,6 @@ on:
 
 jobs:
   docs:
-    uses: MrThearMan/CI/.github/workflows/docs.yml@v0.3.4
+    uses: MrThearMan/CI/.github/workflows/docs.yml@v0.4.1
     with:
       os: "windows-latest"

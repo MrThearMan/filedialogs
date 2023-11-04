@@ -30,19 +30,19 @@ Implements easy Windows file dialog functions. Requires the [pywin32](https://py
 ```python
 from filedialogs import save_file_dialog, open_file_dialog, open_folder_dialog
 
-openpath = open_file_dialog()
-if openpath:
-    with open(openpath, "r") as f:
+open_path = open_file_dialog()
+if open_path:
+    with open(open_path, "r") as f:
         ...
 
-savepath = save_file_dialog()
-if savepath:
-    with open(savepath, "w") as f:
+save_path = save_file_dialog()
+if save_path:
+    with open(save_path, "w") as f:
         ...
 
-openfolder = open_folder_dialog()
-if openfolder:
-    with open(os.path.join(openfolder, ...), "w") as f:
+open_folder = open_folder_dialog()
+if open_folder:
+    with open(os.path.join(open_folder, ...), "w") as f:
         ...
 ```
 
