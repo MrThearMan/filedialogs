@@ -50,7 +50,7 @@ python = ">=3.8,<4"
 pywin32 = ">=306"
 
 [tool.poetry.group.test.dependencies]
-pytest = "8.2.0"
+pytest = "8.2.1"
 coverage = "7.5.1"
 pre-commit = "3.5.0"
 tox = "4.15.0"
