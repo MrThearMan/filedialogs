@@ -10,8 +10,8 @@ from win32gui import GetDesktopWindow, GetOpenFileNameW, GetSaveFileNameW  # typ
 
 __all__ = [
     "open_file_dialog",
-    "save_file_dialog",
     "open_folder_dialog",
+    "save_file_dialog",
 ]
 
 
