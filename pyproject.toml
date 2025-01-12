@@ -1,13 +1,11 @@
-[tool.poetry]
+[project]
 name = "windows_filedialogs"
 version = "0.0.7"
 description = "Simple Windows file dialogs."
 authors = [
-    "Matti Lamppu <lamppu.matti.akseli@gmail.com>",
+    { name = "Matti Lamppu", email = "lamppu.matti.akseli@gmail.com" },
 ]
-packages = [
-    { include = "filedialogs" },
-]
+
 license = "MIT"
 readme = "README.md"
 homepage = "https://mrthearman.github.io/filedialogs"
@@ -33,19 +31,24 @@ classifiers = [
     "Programming Language :: Python :: 3.12",
     "Programming Language :: Python :: 3.13",
 ]
-include = [
-    "README.md",
-    "LICENSE",
-]
-exclude = [
-    "tests",
+requires-python = ">=3.10,<4"
+dynamic = [
+    "dependencies",
 ]
 
-[tool.poetry.urls]
-"Bug Tracker" = "https://github.com/MrThearMan/filedialogs/issues"
+[project.urls]
+"Homepage" = "https://mrthearman.github.io/django-environment-config"
+"Repository" = "https://github.com/MrThearMan/django-environment-config"
+"Bug Tracker" = "https://github.com/MrThearMan/django-environment-config/issues"
+"Documentation" = "https://mrthearman.github.io/django-environment-config"
+
+[tool.poetry]
+requires-poetry = ">=2.0.0"
+packages = [
+    { include = "filedialogs" },
+]
 
 [tool.poetry.dependencies]
-python = ">=3.10,<4"
 pywin32 = ">=306"
 
 [tool.poetry.group.test.dependencies]
@@ -60,7 +63,6 @@ pymdown-extensions = "10.13"
 mkdocs-mermaid2-plugin = "1.2.1"
 
 [tool.poetry.group.lint.dependencies]
-mypy = "1.14.1"
 pre-commit = "4.0.1"
 
 [tool.ruff]
@@ -111,8 +113,7 @@ select = [
     "W",        # pycodestyle warnings
 ]
 ignore = [
-    "ANN101",   # Missing type annotation for `self` in method
-    "ANN102",   # Missing type annotation for `cls` in method
+    "A005",     # Allow shadowing builin modules
     "ANN401",   # Any-typing allowed
     "FBT001",   # Boolean positional argument in function definition
     "FBT002",   # Boolean positional argument in method definition
@@ -135,11 +136,6 @@ ignore = [
     "W191",     # tab-indentation
 ]
 
-[tool.mypy]
-python_version = "3.13"
-warn_return_any = "True"
-warn_unused_configs = "True"
-
 [tool.coverage.run]
 relative_files = true
 
@@ -154,10 +150,11 @@ exclude_lines = [
     "if TYPE_CHECKING:",
     "except ImportError:",
     "pragma: no cover",
+    "pass"
 ]
 
 [tool.pytest.ini_options]
-addopts = "-vv -s --log-cli-level=INFO"
+addopts = "--disable-warnings"
 
 [tool.tox]
 legacy_tox_ini = """
@@ -179,9 +176,9 @@ setenv =
     PYTHONPATH = {toxinidir}
 commands =
     poetry install
-    poetry run coverage run -m pytest
+    poetry run coverage run -m pytest --disable-warnings
 """
 
 [build-system]
-requires = ["poetry-core>=1.9.0"]
+requires = ["poetry-core>=2.0.0"]
 build-backend = "poetry.core.masonry.api"
