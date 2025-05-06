@@ -52,18 +52,18 @@ packages = [
 pywin32 = ">=306"
 
 [tool.poetry.group.test.dependencies]
-pytest = "8.3.4"
-coverage = "7.6.10"
-tox = "4.23.2"
-tox-gh-actions = "3.2.0"
+pytest = "8.3.5"
+coverage = "7.8.0"
+tox = "4.25.0"
+tox-gh-actions = "3.3.0"
 
 [tool.poetry.group.docs.dependencies]
 mkdocs = "1.6.1"
-pymdown-extensions = "10.13"
+pymdown-extensions = "10.15"
 mkdocs-mermaid2-plugin = "1.2.1"
 
 [tool.poetry.group.lint.dependencies]
-pre-commit = "4.0.1"
+pre-commit = "4.2.0"
 
 [tool.ruff]
 fix = true
