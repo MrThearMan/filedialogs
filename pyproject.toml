@@ -53,7 +53,7 @@ pywin32 = ">=306"
 
 [tool.poetry.group.test.dependencies]
 pytest = "8.4.1"
-coverage = "7.10.3"
+coverage = "7.10.4"
 tox = "4.28.4"
 tox-gh-actions = "3.3.0"
 
