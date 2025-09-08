@@ -266,7 +266,7 @@ def test_open_folder_dialog__default():
             dir_path = filedialogs.open_folder_dialog()
 
     assert dir_path == "foo"
-    assert params == (65552, [], "", 0, None, None)
+    assert params == (65548, [], "", 0, None, None)
 
 
 def test_open_folder_dialog__title__encoding():
@@ -282,4 +282,4 @@ def test_open_folder_dialog__title__encoding():
             dir_path = filedialogs.open_folder_dialog("title", "UTF-8")
 
     assert dir_path == "foo"
-    assert params == (65552, [], "title", 0, None, None)
+    assert params == (65548, [], "title", 0, None, None)
