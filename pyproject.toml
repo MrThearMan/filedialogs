@@ -49,7 +49,7 @@ packages = [
 ]
 
 [tool.poetry.dependencies]
-pywin32 = ">=306"
+pywin32 = ">=312"
 
 [tool.poetry.group.test.dependencies]
 pytest = "9.0.3"
