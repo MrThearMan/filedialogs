@@ -53,12 +53,12 @@ pywin32 = ">=312"
 
 [tool.poetry.group.test.dependencies]
 pytest = "9.1.1"
-coverage = "7.14.3"
+coverage = "7.15.0"
 nox = "2026.4.10"
 
 [tool.poetry.group.docs.dependencies]
 mkdocs = "1.6.1"
-pymdown-extensions = "11.0"
+pymdown-extensions = "11.0.1"
 mkdocs-mermaid2-plugin = "1.2.3"
 
 [tool.poetry.group.lint.dependencies]
