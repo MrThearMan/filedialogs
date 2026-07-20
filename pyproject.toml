@@ -53,7 +53,7 @@ pywin32 = ">=312"
 
 [tool.poetry.group.test.dependencies]
 pytest = "9.1.1"
-coverage = "7.15.1"
+coverage = "7.15.2"
 nox = "2026.7.11"
 
 [tool.poetry.group.docs.dependencies]
