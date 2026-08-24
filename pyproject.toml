@@ -54,7 +54,7 @@ pywin32 = ">=312"
 [tool.poetry.group.test.dependencies]
 pytest = "9.1.1"
 coverage = "7.15.4"
-nox = "2026.8.10"
+nox = "2026.8.17"
 
 [tool.poetry.group.docs.dependencies]
 mkdocs = "1.6.1"
