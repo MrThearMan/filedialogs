@@ -52,7 +52,7 @@ packages = [
 pywin32 = ">=312"
 
 [tool.poetry.group.test.dependencies]
-pytest = "9.1.1"
+pytest = "9.2.0"
 coverage = "7.17.0"
 nox = "2026.10.20"
 
